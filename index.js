@@ -6,6 +6,13 @@ const logger = require('./middleware/logger');
 const notFound404 = require('./middleware/404NotFound');
 const errorHandler = require('./middleware/errorHandler');
 
+
+//routes 
+const router = require('./routes/users');
+
+server.use('/users', router);
+
+
 server.use(logger);
 
 server.get('/', (req, res) => {
